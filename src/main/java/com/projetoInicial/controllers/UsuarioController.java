@@ -50,9 +50,6 @@ public class UsuarioController {
         ModelAndView modelAndView = new ModelAndView("usuarios_add");
         modelAndView.addObject("erroEmail","Email inválido");
 
-        System.out.println("");
-
-
         return modelAndView;
     }
 

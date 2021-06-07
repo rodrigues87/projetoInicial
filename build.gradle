@@ -7,10 +7,6 @@ plugins {
 task stage(dependsOn: ['build', 'clean'])
 build.mustRunAfter clean
 
-task copyToLib(type: Copy) {
-	into "$buildDir/libs"
-	from(configurations.compile)
-}
 
 gradle.taskGraph.whenReady {
 	taskGraph ->
@@ -18,8 +14,6 @@ gradle.taskGraph.whenReady {
 			test.enabled = false
 		}
 }
-
-stage.dependsOn(copyToLib)
 
 group = 'com'
 version = '0.0.1-SNAPSHOT'

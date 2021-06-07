@@ -4,17 +4,6 @@ plugins {
 	id 'java'
 }
 
-task stage(dependsOn: ['build', 'clean'])
-build.mustRunAfter clean
-
-
-gradle.taskGraph.whenReady {
-	taskGraph ->
-		if (taskGraph.hasTask(stage)) {
-			test.enabled = false
-		}
-}
-
 group = 'com'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
@@ -31,7 +20,7 @@ dependencies {
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 }
 
 test {

@@ -4,6 +4,23 @@ plugins {
 	id 'java'
 }
 
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
+
+task copyToLib(type: Copy) {
+	into "$buildDir/libs"
+	from(configurations.compile)
+}
+
+gradle.taskGraph.whenReady {
+	taskGraph ->
+		if (taskGraph.hasTask(stage)) {
+			test.enabled = false
+		}
+}
+
+stage.dependsOn(copyToLib)
+
 group = 'com'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'

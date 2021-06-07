@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class UsuarioEntity implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO,generator = "increment")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;

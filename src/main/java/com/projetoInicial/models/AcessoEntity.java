@@ -11,7 +11,7 @@ import java.util.Date;
 public class AcessoEntity implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO ,generator = "increment")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String pagina;

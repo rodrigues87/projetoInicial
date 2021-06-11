@@ -23,7 +23,7 @@ public class UsuarioController {
     @GetMapping("/")
     public ModelAndView listarUsuarios(){
 
-        ModelAndView modelAndView = new ModelAndView("usuarios_listar");
+        ModelAndView modelAndView = new ModelAndView("usuarios");
 
         modelAndView.addObject("titulo","USUÁRIOS");
 

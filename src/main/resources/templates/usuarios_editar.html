@@ -1,11 +1,20 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Mazer Admin Dashboard</title>
 
-  <title>Usuarios</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/bootstrap.css">
+
+  <link rel="stylesheet" href="/assets/vendors/iconly/bold.css">
+
+  <link rel="stylesheet" href="/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+  <link rel="stylesheet" href="/assets/vendors/bootstrap-icons/bootstrap-icons.css">
+  <link rel="stylesheet" href="/assets/css/app.css">
+  <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/x-icon">
 </head>
 <body>
 
@@ -14,34 +23,66 @@
   <div class="col-sm"></div>
 
   <div class="col-sm">
-    <h1>ADICIONAR USUÁRIO</h1>
 
-    <form th:action="@{/usuarios/editar/{id}(id=${usuarioEntity.id})}" th:object="${usuarioEntity}" method="post">
-      <div class="mb-3">
-        <label for="exampleInputNome" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="exampleInputNome" th:field="*{nome}">
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail" class="form-label">Email</label>
-        <input type="email" class="form-control" id="exampleInputEmail" th:field="*{email}">
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputIdade" class="form-label">Idade</label>
-        <input type="number" class="form-control" id="exampleInputIdade" th:field="*{idade}">
-      </div>
-      <div class="row">
-
-        <div class="col-sm">
-          <a href="/usuarios/" class="btn btn-warning" style="width:100%">Cancelar</a>
-
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">ADICIONAR USUÁRIO</h4>
         </div>
-        <div class="col-sm">
-          <button type="submit" class="btn btn-primary" style="width:100%">Salvar</button>
+        <div class="card-content">
+          <div class="card-body">
+            <form class="form form-vertical" th:action="@{/usuarios/add}" th:object="${usuarioEntity}" method="post">
+              <div class="form-body">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group has-icon-left">
+                      <label for="first-name-icon">Nome</label>
+                      <div class="position-relative">
+                        <input class="form-control" id="first-name-icon"
+                               placeholder="Nome completo" type="text"  th:field="*{nome}">
+                        <div class="form-control-icon">
+                          <i class="bi bi-person"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
 
+                    <div class="form-group has-icon-left">
+                      <label for="email-id-icon">Email</label>
+                      <div class="position-relative">
+                        <input class="form-control" id="email-id-icon" placeholder="Email"
+                               type="text"  th:field="*{email}">
+                        <div class="form-control-icon">
+                          <i class="bi bi-envelope"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group has-icon-left">
+                      <label for="mobile-id-icon">Idade</label>
+                      <div class="position-relative">
+                        <input class="form-control" id="mobile-id-icon" placeholder="Mobile"
+                               type="number" th:field="*{idade}">
+                        <div class="form-control-icon">
+                          <i class="bi bi-calendar"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 d-flex justify-content-end">
+                    <button class="btn btn-primary me-1 mb-1" type="submit">Salvar</button>
+                    <button class="btn btn-light-secondary me-1 mb-1"
+                            type="reset">Cancelar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
-
       </div>
-    </form>
+
 
 
   </div>
@@ -53,6 +94,11 @@
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-</body>
+<script src="/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+<script src="/assets/vendors/apexcharts/apexcharts.js"></script>
+<script src="/assets/js/pages/dashboard.js"></script>
+
+<script src="/assets/js/main.js"></script></body>
 </html>

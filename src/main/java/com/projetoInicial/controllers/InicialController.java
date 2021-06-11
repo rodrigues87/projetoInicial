@@ -15,7 +15,7 @@ public class InicialController {
     @Autowired
     AcessoRepository acessoRepository;
 
-    @GetMapping("/")
+    @GetMapping("/acessos")
     public String mostrarPaginaIncial(){
 
         AcessoEntity acessoEntity = new AcessoEntity();
@@ -33,6 +33,12 @@ public class InicialController {
         System.out.println(acessoEntityList.size());
 
         return "paginaInicial";
+    }
+
+    @GetMapping("/")
+    public String inicial(){
+
+        return "dashboard";
     }
 
 

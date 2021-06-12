@@ -1,0 +1,35 @@
+<div th:fragment="menu">
+  <div id="sidebar" class="active">
+    <div class="sidebar-wrapper active">
+      <div class="text-center">
+        <a href="index.html" ><img src="/assets/images/logo/logo-design2.png" width="200"  alt="Logo" srcset=""></a>
+
+      </div>
+
+      <div class="sidebar-menu">
+        <ul class="menu" th:with="view=${#httpServletRequest.getServletPath()}">
+          <li class="sidebar-title">Menu Principal</li>
+
+          <li class="sidebar-item" th:classappend="${#strings.startsWith(view,null)? 'active' : ''}">
+            <a href="/" class='sidebar-link' >
+              <i class="bi bi-grid-fill"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="sidebar-item" th:classappend="${#strings.startsWith(view,'/usuarios')? 'active' : ''}">
+            <a href="/usuarios/" class='sidebar-link'>
+              <i class="bi bi-grid-fill"></i>
+              <span>Usuarios</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+
+
+    </div>
+  </div>
+
+
+</div>

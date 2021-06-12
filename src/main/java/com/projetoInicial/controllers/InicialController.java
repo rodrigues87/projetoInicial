@@ -44,7 +44,7 @@ public class InicialController {
     @GetMapping("/dashboard")
     public String dashboard(){
 
-        return "dashboard";
+        return "template_padrao";
     }
 
 

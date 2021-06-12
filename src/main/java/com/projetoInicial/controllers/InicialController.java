@@ -38,7 +38,13 @@ public class InicialController {
     @GetMapping("/")
     public String inicial(){
 
-        return "dashboard";
+        return "redirect:/dashboard/";
+    }
+
+    @GetMapping("/dashboard")
+    public String dashboard(){
+
+        return "template_padrao";
     }
 
 

@@ -10,7 +10,7 @@
         <ul class="menu" th:with="view=${#httpServletRequest.getServletPath()}">
           <li class="sidebar-title">Menu Principal</li>
 
-          <li class="sidebar-item" th:classappend="${#strings.startsWith(view,null)? 'active' : ''}">
+          <li class="sidebar-item" th:classappend="${#strings.startsWith(view,'/dashboard')? 'active' : ''}">
             <a href="/" class='sidebar-link' >
               <i class="bi bi-grid-fill"></i>
               <span>Dashboard</span>

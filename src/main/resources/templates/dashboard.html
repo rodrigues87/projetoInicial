@@ -9,7 +9,18 @@
 <body>
     <div id="app">
         <div th:replace="fragments/menu"></div>
-        <div th:replace="fragments/dashboard_fragment"></div>
+
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+            <div class="page-content">
+                <div th:replace="fragments/dashboard_fragment"></div>
+
+            </div>
+        </div>
     </div>
 
     <div th:replace="fragments/scripts"></div>

@@ -7,16 +7,16 @@
       </div>
 
       <div class="sidebar-menu">
-        <ul class="menu" th:with="view=${#httpServletRequest.getServletPath()}">
+        <ul class="menu">
           <li class="sidebar-title">Menu Principal</li>
 
-          <li class="sidebar-item" th:classappend="${#strings.startsWith(view,null)? 'active' : ''}">
-            <a href="/" class='sidebar-link' >
+          <li class="sidebar-item active ">
+            <a href="/" class='sidebar-link'>
               <i class="bi bi-grid-fill"></i>
               <span>Dashboard</span>
             </a>
           </li>
-          <li class="sidebar-item" th:classappend="${#strings.startsWith(view,'/usuarios')? 'active' : ''}">
+          <li class="sidebar-item">
             <a href="/usuarios/" class='sidebar-link'>
               <i class="bi bi-grid-fill"></i>
               <span>Usuarios</span>

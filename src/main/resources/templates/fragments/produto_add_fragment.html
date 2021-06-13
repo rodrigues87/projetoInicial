@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-sm"></div>
+
+  <div class="col-sm">
+
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">ADICIONAR PRODUTO</h4>
+      </div>
+      <div class="card-content">
+        <div class="card-body">
+          <form class="form form-vertical" th:action="@{/produtos/add}" th:object="${produtoEntity}" method="post">
+            <div class="form-body">
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group has-icon-left">
+                    <label for="first-name-icon">Nome</label>
+                    <div class="position-relative">
+                      <input class="form-control" id="first-name-icon"
+                             placeholder="Nome completo" type="text"  th:field="*{nome}">
+                      <div class="form-control-icon">
+                        <i class="bi bi-person"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+
+                  <div class="form-group has-icon-left">
+                    <label for="email-id-icon">Valor</label>
+                    <div class="position-relative">
+                      <input class="form-control" id="email-id-icon" placeholder="Valor"
+                             type="number" step="0.01"  th:field="*{valor}">
+                      <div class="form-control-icon">
+                        <i class="bi bi-envelope"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 d-flex justify-content-end">
+                  <button class="btn btn-primary me-1 mb-1" type="submit">Salvar</button>
+                  <a href="/produtos/" class="btn btn-light-secondary me-1 mb-1"
+                     type="reset">Cancelar
+                  </a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <div class="col-sm"></div>
+
+
+</div>

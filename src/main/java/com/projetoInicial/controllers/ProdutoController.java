@@ -40,5 +40,16 @@ public class ProdutoController {
 
         return "redirect:/produtos/";
     }
+    @GetMapping("/deletar/{id}")
+    public String deletar(@PathVariable(value = "id") Long id){
+
+        ProdutoEntity produtoEntity  =new ProdutoEntity();
+
+        produtoEntity = produtoService.findProdutoById(id);
+
+        produtoService.deletar(produtoEntity);
+
+        return "redirect:/produtos/";
+    }
 
 }

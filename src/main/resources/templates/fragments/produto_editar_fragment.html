@@ -9,7 +9,7 @@
       </div>
       <div class="card-content">
         <div class="card-body">
-          <form class="form form-vertical" th:action="@{/produtos/add}" th:object="${produtoEntity}" method="post">
+          <form class="form form-vertical" th:action="${produtoEntity.id}" th:object="${produtoEntity}" method="post">
             <div class="form-body">
               <div class="row">
                 <div class="col-12">
@@ -38,7 +38,7 @@
                   </div>
                 </div>
                 <div class="col-12 d-flex justify-content-end">
-                  <button class="btn btn-primary me-1 mb-1" type="submit">Salvar</button>
+                  <button class="btn btn-primary me-1 mb-1" type="submit">Atualizar</button>
                   <a href="/produtos/" class="btn btn-light-secondary me-1 mb-1"
                      type="reset">Cancelar
                   </a>

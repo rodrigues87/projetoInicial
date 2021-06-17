@@ -1,9 +1,6 @@
 package com.projetoInicial.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -15,6 +12,17 @@ public class ProdutoEntity implements Serializable {
 
     private String nome;
     private Double valor;
+
+    @ManyToOne
+    private VendaEntity vendaEntity;
+
+    public VendaEntity getVendaEntity() {
+        return vendaEntity;
+    }
+
+    public void setVendaEntity(VendaEntity vendaEntity) {
+        this.vendaEntity = vendaEntity;
+    }
 
     public Long getId() {
         return id;
